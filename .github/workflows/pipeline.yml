@@ -1,0 +1,22 @@
+name: Snyk Lint                                              # Define the name of the workflow
+
+on: [push, pull_request]                                     # Trigger the workflow on push and pull request events
+
+jobs:                                                        # Initialise job
+  lint:                                                      # Define a job named 'lint'
+    runs-on: ubuntu-latest                                   # Specifies the type of VM to provision
+
+    container:                                               # Set container image
+      image: monkeyknuckles/snyk                             # Points to Snyk container
+
+    steps:                                                   # List of steps to execute
+      - name: Checkout code                                  # Checkout code label text
+        uses: actions/checkout@v3                            # Use the checkout action to clone the repository
+
+      - name: Authorise Synk                                 # Set authorise Snyk label text
+        run: snyk auth ${{ secrets.SNYK }}                   # Authorise Snyk with Github environment secret (variable)
+  
+      - name: Run Snyk security scan                         # Set Snyk security scan text
+        run: snyk code test --scan-all-files                 # Check all files for security vulnerabilities with Snyk
+           
+            
