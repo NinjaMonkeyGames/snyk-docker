@@ -10,17 +10,10 @@ pipeline.
 
 ## Configuration information ##
 
-There is a '' file containing the Snyk configuration in the root of the project directory. You can
-use the following YAML line to copy this into your project directory.
+Alternately you can use the following command to execute security scan on all files.
 
 ```shell
-cp /app/'' $GITHUB_WORKSPACE
-```
-
-Alternately you can use the following command to use your own configuration file.
-
-```shell
-snyk .
+snyk code test --scan-all-files
 ```
 
 See links below for more information about Snyk and Alpine Linux.
@@ -43,7 +36,7 @@ See links below for more information about Snyk and Alpine Linux.
   * **Alpine source pull address:**   docker pull alpine:3.20.0
 
   * **Website:**          <https://cspell.org>
-  * **GitHub Snyk:**    <https://github.com/streetsidesoftware/snyk>
+  * **GitHub Snyk:**      <https://github.com/streetsidesoftware/snyk>
   * **VSC Plugin:**       <https://marketplace.visualstudio.com/items?itemName=snyk-security.snyk-vulnerability-scanner>
 
 ---
@@ -80,6 +73,7 @@ This project uses a sequential versioning system.
 | Version No:    | Description Of Update                                                                               |
 |----------------|-----------------------------------------------------------------------------------------------------|
 | 0.0.0.0        | Base files included.                                                                                |
+| 0.0.0.1        | Modified some typos made in 'README.md'.                                                            |
 
 ---
 
